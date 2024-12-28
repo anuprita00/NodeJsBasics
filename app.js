@@ -1,11 +1,25 @@
 //importing http module
 const http = require('http');
 
-const server = http.createServer((req,res) => { 
-    //takes callback function with 2 argument request and response
-    console.log(req);
-});
+//connecting your own module file
+const route = require('./routes');
+
+const server = http.createServer(route);
+console.log(route.someText);
+//     (req,res) => { 
+//     //takes callback function with 2 argument request and response
+//     console.log(req);
+//     //sending a response
+//     res.setHeader( 'Content-Type','text/html');
+//     res.write('<html>');
+//     res.write('<head><title>My First Page</title> </head>');
+//     res.write('<body><h1>Hello from my Node.js Server!</h1></body>');
+//     res.write('</html>');
+//     res.end();
+    
+// });
 
 //cretes a listener on specific path or port
 //server.listen(port, hostname, backlog, callback);
+
 server.listen(3000);
