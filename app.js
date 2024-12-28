@@ -4,6 +4,7 @@ const http = require('http');
 //connecting your own module file
 const route = require('./routes');
 
+//createserver() does not end on its own we need to use process.exit() to end 
 const server = http.createServer(route);
 console.log(route.someText);
 //     (req,res) => { 
